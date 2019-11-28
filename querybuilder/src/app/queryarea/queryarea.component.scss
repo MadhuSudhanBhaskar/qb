@@ -1,0 +1,17 @@
+.queryarea-header {
+    padding: 10px;
+    border-bottom: 1px solid lightgrey;
+    div {
+        .icons {
+            cursor: pointer;
+        }
+        .disable {
+            pointer-events: none;
+            opacity: 0.3;
+        }
+    }
+}
+
+.query__areasection {
+    padding: 10px;
+}

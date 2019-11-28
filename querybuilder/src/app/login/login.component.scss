@@ -1,0 +1,17 @@
+.main-div{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mat-card-header-text {
+      margin: 0%;
+    }
+
+    .queryBuilderLogin {
+      margin: 0%;
+    }
+  }
+  .mat-progress-spinner {
+    position: absolute;
+  }

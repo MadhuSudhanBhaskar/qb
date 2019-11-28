@@ -1,0 +1,36 @@
+<div class="example-box" cdkDrag cdkDragBoundary=".example-boundary" 
+  (cdkDragStarted)="mainDrag($event)" (cdkDragMoved)="maindragMoving($event)" >
+    <section class="tableclass">
+      <header><h4 class="tableclass--tableName {{tableName}}">{{tableName}}</h4></header>
+        <div class="wrap {{item.Column}}" *ngFor="let item of someProp"
+        (contextmenu)="onContextMenu($event, item.Column, tableName)">
+          <div id="c1" cdkDrag cdkDrop cdkDropList 
+            #todoLists="cdkDropList"
+            style="display:inline-block;"
+            [cdkDropListConnectedTo]="[doneList, doneListnew]"
+            (cdkDropListDropped)="droppedTest($event)"     
+            (mousedown) = "dragElementClick($event)"
+            (cdkDragStarted)="dragStarted($event)"         
+            class="con_anchor con_1" >
+          </div>
+        <div class="tableclass--columnName tableclass--columnStatus">
+          <label class="tableclass--columnName__capatalize" title="{{item.Column}}">{{item.Column}}</label>
+        </div>
+        <div class="tableclass--columnName">
+          <label class="tableclass--columnName__capatalize">{{item.Type}}</label>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<div style="visibility: hidden; position: fixed"
+    [style.left]="contextMenuPosition.x"
+    [style.top]="contextMenuPosition.y"
+    [matMenuTriggerFor]="contextMenu">
+</div>
+<mat-menu #contextMenu="matMenu">
+	<ng-template matMenuContent let-item="item">
+		<button mat-menu-item (click)="onContextMenuAction()">Where</button>
+		<!--<button mat-menu-item (click)="onContextMenuAction2()">Action 2</button>-->
+	</ng-template>
+</mat-menu>

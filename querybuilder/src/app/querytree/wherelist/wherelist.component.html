@@ -1,0 +1,28 @@
+
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="qb-catalogue-tree" *ngIf="whereClause">
+  <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+    <mat-icon class="mat-icon-rtl-mirror qb-table">
+        {{treeControl.isExpanded(node) ? 'expand_more' : 'table_chart'}}
+    </mat-icon>
+    <span class="qb-tablename" (click)="delete(node.item)">
+        <span class="qb-tablename--condition">{{node.item.conditionData}}</span> {{node.item.name}}
+        {{node.item.operator}} {{node.item.condition}}
+    </span>
+    
+  <mat-divider>{{treeControl.isExpanded(node) ? 'expand_more' : 'table_chart'}}</mat-divider>
+  </mat-tree-node>
+  <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+    <button mat-icon-button
+            [attr.aria-label]="'toggle ' + node.filename" matTreeNodeToggle>
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+      </mat-icon>
+    </button>
+    {{node.item}}
+    <mat-progress-bar *ngIf="node.isLoading"
+                      mode="indeterminate"
+                      class="example-tree-progress-bar"></mat-progress-bar>
+  </mat-tree-node>
+  <mat-divider></mat-divider>
+</mat-tree>
+<a (click)="delete()">Delete</a>

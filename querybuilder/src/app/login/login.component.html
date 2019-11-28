@@ -1,0 +1,45 @@
+<div class="main-div">
+<mat-card class="queryBuilder-card mat-elevation-z4">
+   <mat-card-header class="queryBuilder-header">
+     <mat-card-title>Login</mat-card-title>
+   </mat-card-header>
+   <mat-card-content>
+     <form class="queryBuilder-form" [formGroup]="loginForm" novalidate>
+       <table class="queryBuilder-full-width" cellspacing="0">
+         <tr>
+           <td>
+              <mat-form-field class="queryBuilder-full-width">
+                <input matInput placeholder="Username" 
+                name="username" novalidate formControlName="username">
+                <mat-error *ngIf="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)">Username is Mandatory</mat-error>
+              </mat-form-field>
+           </td>
+         </tr>
+         <tr>
+            <td>
+              <mat-form-field class="queryBuilder-full-width">
+                <input matInput placeholder="Password" 
+                  type="password" name="password" novalidate 
+                  formControlName="password">
+                  <mat-error *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">Password is Mandatory</mat-error>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+              <td>
+                  <mat-card-actions class="queryBuilderLogin">
+                      <button [disabled]="loginForm.pristine || loginForm.invalid" mat-raised-button (click)="login(loginForm)" color="primary">Login</button>
+                    </mat-card-actions>
+              </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-error *ngIf="authProblem">Can you please try again</mat-error>
+            </td>
+          </tr>
+      </table>
+     </form>
+   </mat-card-content>
+ </mat-card>
+ <mat-spinner [diameter]="50" [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+</div>

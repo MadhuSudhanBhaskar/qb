@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Query Builder</span>
+    </mat-toolbar-row>
+</mat-toolbar>  
+<section class="qb-dashboard">
+  <div class="qb-catalog-schema">
+    <app-catalogue></app-catalogue>
+  </div>
+  
+  <div class="qb-query-workflow">
+    <app-workflow></app-workflow>
+  </div>
+</section>
+
+<!--This section is for query tree and query space-->
+<section class="qb-dashboard-tree-space">
+  
+    <div class="qb-query-tree">
+      <app-querytree></app-querytree>
+    </div>
+    <div class="qb-query-workflow">
+      <app-queryarea></app-queryarea>
+    </div>
+</section>
+
+<section>
+  <app-queryresult></app-queryresult>
+</section>

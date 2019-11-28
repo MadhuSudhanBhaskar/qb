@@ -1,0 +1,13 @@
+{
+    "path": "http://35.154.235.8:8080",
+    "login": "/authenticate",
+    "tokenRequest": "/requestToken",
+    "admin":"/admin",
+    "catalogue": "/catalogs",
+    "schemas":"/schemas",
+    "tables":"/tables",
+    "tableList": "/tableMetadata",
+    "executeQuery": "/executeQuery",
+    "queryResult": "/queryResult",
+    "querystatus": "/querystatus"
+}

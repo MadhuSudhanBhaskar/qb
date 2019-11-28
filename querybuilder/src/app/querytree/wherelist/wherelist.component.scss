@@ -1,0 +1,11 @@
+.qb-catalogue-tree {
+    .qb-tablename {
+        overflow: auto;
+        margin-left: 10px;
+        font-size: 12px;
+        .qb-tablename--condition {
+            color: deepskyblue;
+            font-weight: 600;
+        }
+    }
+}

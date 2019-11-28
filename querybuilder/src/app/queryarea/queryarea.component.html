@@ -1,0 +1,15 @@
+<header class="queryarea-header">
+  <div>
+      <mat-icon class="icons" [ngClass]="{'disable': query.length =='0'}" (click)="query.length > 0 ? callQuery() : false">play_arrow</mat-icon>
+  </div>
+</header>
+<section class="query__areasection">
+  <div *ngFor="let item of query;let i = index">
+    <span *ngIf="i>1">,</span>{{item}}
+  </div>
+  <div *ngFor="let item of whereClause;let i = index">
+    <span *ngIf="i>1"></span>{{item}}
+  </div>
+</section>
+<!--<app-selectquery [select]="select" [values]= "values"></app-selectquery>
+<app-whereclause [where]="where"></app-whereclause>-->

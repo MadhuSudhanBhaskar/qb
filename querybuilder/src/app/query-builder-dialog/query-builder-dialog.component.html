@@ -1,0 +1,43 @@
+<form [formGroup]="contactForm" (ngSubmit)="addClicked()" novalidate>
+<h1 mat-dialog-title>Selected Column {{data.name}}</h1>
+<div mat-dialog-content>
+  <p>Where</p>
+  <div>
+  <mat-form-field>
+    <mat-label>Select Operator</mat-label>
+    <mat-select formControlName="animalControl" required [(ngModel)]="data.operator">
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let animal of animals" [value]="animal.value" >
+        {{animal.name}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="animalControl.errors?.required">Please choose an Operator</mat-error>
+    <mat-hint>{{animalControl.value}}</mat-hint>
+  </mat-form-field>
+  </div>
+  <div>
+  <mat-form-field>
+    <input matInput formControlName="selectFormControl" [(ngModel)]="data.condition" placeholder="Condition" required>
+    <mat-error *ngIf="selectFormControl.errors?.required
+    && (selectFormControl.errors && (selectFormControl.dirty || selectFormControl.touched))">Please have a condition</mat-error>
+  </mat-form-field>
+  </div>
+  <div *ngIf="data.whereCount > 0">
+      <mat-label class="selectCondition">Please select a condition</mat-label>
+      <mat-radio-group formControlName="selectCondition" 
+                  aria-label="Select an option" required
+                  [(ngModel)]="data.conditionData">
+        <mat-radio-button class="operator__and" value="and">and</mat-radio-button>
+        <mat-radio-button class="operator__or" value="or">or</mat-radio-button>
+      </mat-radio-group>
+      <mat-error *ngIf="selectCondition.errors?.required
+      && (selectCondition.errors && (selectCondition.dirty || selectCondition.touched))">Please select</mat-error>
+  </div>
+
+</div>
+<div mat-dialog-actions>
+  <!--<button mat-button (click)="onNoClick()">Okay</button>-->
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial 
+  [disabled]="!contactForm.valid">Ok</button>
+</div>
+</form>

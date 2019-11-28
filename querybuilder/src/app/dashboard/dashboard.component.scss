@@ -1,0 +1,47 @@
+$border-Colour: gainsboro;
+
+.qb-dashboard {
+    display: flex;
+    margin: 10px;
+    height: 50%;
+    .qb-catalog-schema {
+        width: 35%;
+        display: inline-block;
+        height: 50vh;
+        overflow-y: auto;
+        border: 2px solid $border-Colour;
+        border-radius: 5px;
+    }
+    .qb-query-workflow {
+        //background-image: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.14), transparent 5px, rgba(255, 255, 255, 0.4) 15px, rgba(255, 255, 255, 0.12) 15px),
+         //   repeating-linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0,0,0,.26) 15px, rgba(255,255,255,.4) 5px, rgba(255,255,255,.4) 1px);
+        height: 50vh;
+        width: 100%;
+        margin-left: 10px;
+        border: 2px solid $border-Colour;
+        border-radius: 5px;
+    }
+}
+
+.qb-dashboard-tree-space {
+    display: flex;
+    margin: 10px;
+    height: 50%;
+    .qb-query-tree {
+        width: 35%;
+        display: inline-block;
+        height: 50vh;
+        overflow-y: auto;
+        border: 2px solid $border-Colour;
+        border-radius: 5px;
+    }
+    .qb-query-workflow {
+        //background-image: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.14), transparent 5px, rgba(255, 255, 255, 0.4) 15px, rgba(255, 255, 255, 0.12) 15px),
+         //   repeating-linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0,0,0,.26) 15px, rgba(255,255,255,.4) 5px, rgba(255,255,255,.4) 1px);
+        height: 50vh;
+        width: 100%;
+        margin-left: 10px;
+        border: 2px solid $border-Colour;
+        border-radius: 5px;
+    }
+}
